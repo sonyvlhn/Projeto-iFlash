@@ -1,0 +1,323 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    transition-duration: 0.3s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: #7C7C7C;
+    margin: 0;
+
+}
+
+
+
+#cabecalho {
+    height: clamp(500px, 100vh, 950px);
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.conteudo-textual {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: clamp(10px, 4vw, 60px);
+}
+.descricao{
+    max-width: 625px;
+}
+.logo {
+    width: clamp(150px, 35vw, 480px);
+}
+
+.raio {
+    width: clamp(150px, 13vw, 210px);
+}
+
+.raio:hover {
+    transform: scaleX(1.1);
+    transition: 0.3s;
+}
+
+@media (max-width: 600px) {
+    .conteudo-textual {
+        gap: 50px;
+    }
+
+    .logo {
+        width: clamp(150px, 50vw, 300px);
+    }
+
+    .conteudo-raio {
+        display: none;
+    }
+    .section{
+        max-height: 500px;
+;
+    }
+
+    #img-cristal2 {
+        margin-top: -110px;
+    }
+}
+
+/*Card dos benefícios*/
+
+.icon {
+    width: clamp(30px, 3vw, 50px);
+
+}
+
+.box1 {
+    border: 1px solid #7C7C7C;
+    border-radius: 20px;
+    width: clamp(320px, 50vw, 600px);
+    height: clamp(80px, 10vw, 100px);
+}
+
+.division {
+    width: 1px;
+    height: 80%;
+    border: 0;
+    background-color: #7C7C7C;
+}
+
+.box1>.beneficios {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+.text-icon {
+    width: 100px;
+}
+
+.box1>.beneficios>.conteudo-parcela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(12px, 1.5vw, 16px);
+}
+
+.box1>.beneficios>.conteudo-caixa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(12px, 1.5vw, 16px);
+    padding-left: 10px;
+}
+
+#text-parcela {
+    width: clamp(70px, 10vw, 200px);
+}
+
+#text-caixa {
+    width: clamp(70px, 11vw, 200px);
+}
+
+/*Seção dos aparelhos*/
+.section {
+    position: relative;
+    height: clamp(550px, 85vh, 900px);
+    width: 100%;
+}
+
+#redirecionamento {
+    font-size: clamp(12px, 1.2vw, 15px);
+    text-align: center;
+    margin: 0;
+}
+
+.img-cristal1 {
+    width: clamp(150px, 12vw, 220px);
+    position: absolute;
+    right: 0;
+}
+
+#cristal1 {
+    top: 4%;
+}
+
+.section>.container-card {
+    position: absolute;
+    width: clamp(390px, 40%, 800px);
+    height: clamp(400px, 50%, 800px);
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.container-card>.card {
+    margin: auto;
+    margin-top: 70px;
+    border: 1px solid #7C7C7C;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    width: clamp(320px, 35vw, 650px);
+    height: clamp(360px, auto, 630px);
+    padding: 5%;
+
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.4s;
+}
+.box-name{
+    display: flex;
+    gap: -10px;
+    margin: 0;
+    
+}
+.nome-dispositivo {
+    color: white;
+    font-weight: normal;
+    font-size: clamp(28px, 2.5vw, 40px);
+    
+    
+}
+.nome-modelo {
+    color: white;
+    font-size: clamp(16px, 1.2vw, 40px);
+    font-weight: lighter;
+    margin-top: -10px;
+    
+}
+
+.card>.container {
+    width: 100%;
+    height: clamp(230px, 80%, 550px);
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+    gap: 7%;
+}
+
+.box-celular {
+    width: max-content;
+    
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.box-celular > .img-produto {
+    width: clamp(170px, 18vw, 380px);
+}
+
+.container>.detalhes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: clamp(130px, 10vw, 300px);
+
+}
+
+.GB {
+    color: white;
+    font-size: clamp(16px, 2vw, 25px);
+    font-weight: bold;
+    display: flex;
+    justify-content: start;
+}
+
+.detalhes>.box-preco {
+    width: clamp(100px, 100%, 300px);
+    height: clamp(50px, auto, 40px);
+    border: 1px solid #7C7C7C;
+    border-radius: 10px;
+    margin-top: -10%;
+}
+
+.box-preco>.preco {
+    color: white;
+    font-size: clamp(20px, 2vw, 38px);
+    text-align: center;
+    margin: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.card>.alertas {
+    font-size: clamp(13px, 1.2vw, 17px);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(250px, 20vw, 400px);
+    top: 93%;
+    text-align: center;
+    color: white;
+}
+
+.container-card>#img-cristal2 {
+    width: clamp(150px, 15vw, 250px);
+    position: absolute;
+    left: 0;
+    top: clamp(400px, 60vh, 100%);
+}
+
+#img-cristal3 {
+    width: clamp(150px, 15vw, 250px);
+    position: absolute;
+    right: 0;
+    top: clamp(100px, 30vw, 200px);
+}
+
+#img-cristal4 {
+    width: clamp(150px, 15vw, 250px);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#img-cristal5 {
+    width: clamp(150px, 18vw, 280px);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.creditos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #7C7C7C;
+    text-decoration: none;
+    font-size: clamp(12px, 1.2vw, 16px);
+    margin-top: 30px;
+    height: 10vh;
+}
+.ancora{
+    color: #7C7C7C;
+    text-decoration: none;
+}
+.ancora:hover{
+    color: white;
+    text-decoration: underline chocolate;
+    transition:0.7s;
+}
