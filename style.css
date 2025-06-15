@@ -6,6 +6,7 @@
     box-sizing: border-box;
     margin: 0;
     transition-duration: 0.3s;
+    text-decoration: none;
 }
 
 body {
@@ -15,7 +16,10 @@ body {
     margin: 0;
 
 }
-
+a{
+    text-decoration: none;
+    display: inherit;
+}
 
 
 #cabecalho {
@@ -159,7 +163,6 @@ body {
 #cristal1 {
     top: 4%;
 }
-
 .section>.container-card {
     position: absolute;
     width: clamp(390px, 40%, 800px);
@@ -179,7 +182,6 @@ body {
     width: clamp(320px, 35vw, 650px);
     height: clamp(360px, auto, 630px);
     padding: 5%;
-
 }
 
 .card:hover {
@@ -196,9 +198,8 @@ body {
     color: white;
     font-weight: normal;
     font-size: clamp(28px, 2.5vw, 40px);
-    
-    
 }
+
 .nome-modelo {
     color: white;
     font-size: clamp(16px, 1.2vw, 40px);
@@ -207,7 +208,7 @@ body {
     
 }
 
-.card>.container {
+.ancora-prod>.container {
     width: 100%;
     height: clamp(230px, 80%, 550px);
     display: inline-flex;
@@ -301,17 +302,6 @@ body {
     right: 0;
     bottom: 0;
 }
-.creditos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #7C7C7C;
-    text-decoration: none;
-    font-size: clamp(12px, 1.2vw, 16px);
-    margin-top: 30px;
-    height: 10vh;
-}
 .ancora{
     color: #7C7C7C;
     text-decoration: none;
@@ -321,3 +311,25 @@ body {
     text-decoration: underline chocolate;
     transition:0.7s;
 }
+.ancora-prod{
+    text-decoration: none;
+}
+.creditos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #7C7C7C;
+    font-size: clamp(12px, 1.2vw, 16px);
+    margin-top: 30px;
+    height: 10vh;
+    width: 100%;
+}
+.ancora-creditos{
+    color: #7C7C7C;
+    display: inline;
+}
+.ancora-creditos:hover{
+    color: white;
+    text-decoration: none;
+}   
