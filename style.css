@@ -263,6 +263,29 @@ a{
     padding-top: 4px;
     padding-bottom: 4px;
 }
+.divisoria-precos {
+    width: 95%;
+    margin: auto;
+    height: 1px;
+    background-color: #7C7C7C;
+    border: 0;
+}
+.box-parcelamento{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 5px;
+    color: white;
+}
+.q-parcelas{
+    display: inline-flex;
+    font-size: clamp(12px, 1.2vw, 16px);
+    font-weight: normal;
+}
+.parcelamento{
+    font-size: clamp(12px, 2vw, 22px);
+    display: inline-flex;
+}
 
 .card>.alertas {
     font-size: clamp(13px, 1.2vw, 17px);
@@ -301,6 +324,17 @@ a{
     position: absolute;
     right: 0;
     bottom: 0;
+}
+#img-cristal6{
+    width: clamp(150px, 16vw, 280px);
+    position: absolute;
+    right: 35%;
+}
+#img-cristal7{
+    width: clamp(150px, 16vw, 280px);
+    position: absolute;
+    right: 24%;
+    top: 80px;
 }
 .ancora{
     color: #7C7C7C;
