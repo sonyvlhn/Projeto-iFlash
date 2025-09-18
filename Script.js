@@ -37,10 +37,4 @@ item.addEventListener('mousemove', (e) => {
   item.scrollLeft = scrollLeft - walk;
 });
 
-item.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    if (isDragging) {
-      e.preventDefault(); 
-    }
-  });
-});
+
