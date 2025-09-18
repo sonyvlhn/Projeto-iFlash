@@ -1,40 +1,30 @@
-const item = document.querySelector('.container-cards');
-
+const containerCards = document.querySelector('.container-cards');
 let isDown = false;
 let startX;
 let scrollLeft;
-let isDragging = false;
 
-item.addEventListener('mousedown', (e) => {
+containerCards.addEventListener('mousedown', (e) => {
   isDown = true;
-  isDragging = false;
-  startX = e.pageX - item.offsetLeft;
-  scrollLeft = item.scrollLeft;
-  item.style.cursor = "grabbing";
+  startX = e.pageX - containerCards.offsetLeft;
+  scrollLeft = containerCards.scrollLeft;
 });
 
-item.addEventListener('mouseleave', () => {
+containerCards.addEventListener('mouseup', () => {
   isDown = false;
-  item.style.cursor = "grab";
+
+  // Desativa os links
+  containerCards.classList.add("disabled");
+
+  // Reativa após 10s
+  setTimeout(() => {
+    containerCards.classList.remove("disabled");
+  }, 10000);
 });
 
-item.addEventListener('mouseup', () => {
-  isDown = false;
-  item.style.cursor = "grab";
-  setTimeout(() => (isDragging = false), 0);
-});
-
-item.addEventListener('mousemove', (e) => {
+containerCards.addEventListener('mousemove', (e) => {
   if (!isDown) return;
   e.preventDefault();
-  const x = e.pageX - item.offsetLeft;
+  const x = e.pageX - containerCards.offsetLeft;
   const walk = (x - startX) * 2;
-
-  if (Math.abs(x - startX) > 5) {
-    isDragging = true; 
-  }
-
-  item.scrollLeft = scrollLeft - walk;
+  containerCards.scrollLeft = scrollLeft - walk;
 });
-
-
