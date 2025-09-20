@@ -151,7 +151,7 @@ a{
 }
 .section-carrossel {
     position: relative;
-    height: clamp(550px, 85vh, 90px);
+    height: clamp(550px, 85vh, 800px);
     width: 100%;
 
 }
