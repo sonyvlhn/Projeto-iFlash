@@ -10,12 +10,42 @@
     
 }
 
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: black;
+    background: linear-gradient(
+        -45deg,
+        #000000,
+        #1a1a1a,
+        #1f1f1f,
+        #1a1a1a,
+        #0d0d0d,
+        #252525,
+        #000000
+    );
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    animation: gradientShift 8s ease-in-out infinite;
     color: #7C7C7C;
     margin: 0;
-
+    min-height: 100vh;
 }
 a{
     text-decoration: none;
@@ -91,8 +121,14 @@ a{
 }
 
 .box1 {
-    border: 1px solid #7C7C7C;
+    background: rgba(20, 20, 20, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 20px;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.37),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
     width: clamp(320px, 50vw, 600px);
     height: clamp(80px, 10vw, 100px);
 }
@@ -101,7 +137,11 @@ a{
     width: 1px;
     height: 80%;
     border: 0;
-    background-color: #7C7C7C;
+    background: linear-gradient(180deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
 }
 
 .box1>.beneficios {
@@ -224,18 +264,66 @@ a{
 .card {
     margin: auto;
     margin-top: 70px;
-    border: 1px solid #7C7C7C;
+    background: rgba(20, 20, 20, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.37),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 1px 0 rgba(0, 0, 0, 0.2);
     width: clamp(320px, 35vw, 650px);
     height: clamp(360px, 35vw, 630px);
     padding: 5%;
     user-select: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent
+    );
+    pointer-events: none;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0% { 
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% { 
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% { 
+        background-position: 0% 50%;
+    }
 }
 
 .card:hover {
     transform: scale(1.05);
     transition: 0.4s;
+    background: rgba(25, 25, 25, 0.35);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        0 12px 48px 0 rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 1px 0 rgba(0, 0, 0, 0.3);
 }
 .box-name{
     display: flex;
@@ -300,8 +388,14 @@ a{
 .detalhes>.box-preco {
     width: clamp(100px, 100%, 300px);
     height: clamp(50px, auto, 40px);
-    border: 1px solid #7C7C7C;
+    background: rgba(15, 15, 15, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 
+        0 4px 16px 0 rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
     margin-top: -10%;
 }
 
@@ -317,7 +411,11 @@ a{
     width: 95%;
     margin: auto;
     height: 1px;
-    background-color: #7C7C7C;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.25), 
+        transparent
+    );
     border: 0;
 }
 .box-parcelamento{
@@ -344,14 +442,39 @@ a{
     padding: 10px;
     font-weight: bold;
 }
-.card>.alertas {
+.container-colors{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.text-color{
+    font-size: clamp(12px, 1.2vw, 16px);
+    color: white;
+    margin-right: 10px;
+}
+
+.box-colors{
+    gap: 10px;
+}
+.color-white{    
+    width: clamp(20px, 1vw, 40px);
+    height: clamp(20px, 1vw, 40px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.alertas {
     font-size: clamp(13px, 1.2vw, 17px);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: clamp(250px, 20vw, 400px);
-    top: 93%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    width: clamp(250px, 20vw, 400px);
+    margin: 0 auto;
     color: white;
 }
 
